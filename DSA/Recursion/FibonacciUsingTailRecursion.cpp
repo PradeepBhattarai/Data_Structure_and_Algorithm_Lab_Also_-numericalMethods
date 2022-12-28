@@ -1,11 +1,15 @@
 #include<iostream>
 using namespace std;
-int fibonacii(int n)
+int tail_fibonacii(int n)
 {
     if(n==0||n==1)
         return n;
     else
-        return fibonacii(n-1)+fibonacii(n-2);
+        return tail_fibonacii(n-1)+tail_fibonacii(n-2);
+}
+int fibonacii(int n)
+{
+    return tail_fibonacii(n);
 }
 int main()
 {
