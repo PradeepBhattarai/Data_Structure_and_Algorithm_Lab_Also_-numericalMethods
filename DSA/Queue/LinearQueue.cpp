@@ -60,6 +60,7 @@ int main()
     q.Display();
     q.Dequeue();
     q.Enqueue(89);
+    q.Display();
     q.Dequeue();
     q.Display();
 

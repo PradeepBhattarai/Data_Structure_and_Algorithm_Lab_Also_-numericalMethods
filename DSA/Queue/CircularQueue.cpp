@@ -32,6 +32,7 @@ public:
         if(front==rear==-1)
         {
             cout<<"Dequeue is Underflow"<<endl;
+            return;
         }
         else if(front==rear)
         {
