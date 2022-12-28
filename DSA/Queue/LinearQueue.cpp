@@ -18,7 +18,6 @@ public:
         if(front==-1)
         {
             rear=front=0;
-            arr[0]=x;
         }
         else if(rear==MAX-1)
         {
@@ -28,8 +27,8 @@ public:
         else
         {
             rear++;
-            arr[rear]=x;
         }
+        arr[rear]=x;
     }
     void Dequeue()
     {
