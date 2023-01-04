@@ -1,21 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int tail_fibonacii(int n)
+
+int fib(int n, int a = 0, int b = 1)
 {
-    if(n==0||n==1)
-        return n;
-    else
-        return tail_fibonacii(n-1)+tail_fibonacii(n-2);
-}
-int fibonacii(int n)
-{
-    return tail_fibonacii(n);
+    if (n == 0)
+        return a;
+    if (n == 1)
+        return b;
+    return fib(n - 1, b, a + b);
 }
 int main()
 {
-    int n;
-    cout<<"Enter the no of terms to display:";
-    cin>>n;
-    cout<<"Fibonacii Upto "<<n<<" terms is: "<<fibonacii(n);
+    int n = 9;
+    cout << "fib(" << n << ") = "
+         << fib(n) << endl;
     return 0;
 }
