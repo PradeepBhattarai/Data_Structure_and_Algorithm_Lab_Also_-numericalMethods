@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
-//solving dy/dx=x+y
+
 float f(float x,float y)
 {
-    return x+y;
+    return x*x+2*x-y;
 }
 int main()
 {
@@ -19,12 +19,8 @@ int main()
     cout<<"Enter step size: ";
     cin>>h;
 
-    //calculating step size h
-    // int n=(xn-x0)/h;
-    //Euler's Method
     cout<<"\nx\ty\tslope\tyn+1\n";
     cout<<"--------------------------\n";
-
    while(x0<=xn)
     {
         slope=f(x0,y0);

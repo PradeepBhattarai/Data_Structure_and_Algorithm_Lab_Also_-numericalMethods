@@ -5,7 +5,7 @@ using namespace std;
 
 float f(float x,float y)
 {
-    return x+y;
+    return x*x+2*x-y;
 }
 int main()
 {
@@ -16,7 +16,7 @@ int main()
     cin>>h;
     cout<<"Enter xn for which y to be determined: ";
     cin>>xn;
-    // int n=floor((xn-x0)/h);
+    
     float k1,k2,k,x,y;
     cout<<"\nxn\tyn\n";
     cout<<x0<<"\t"<<y0<<endl;
