@@ -7,8 +7,8 @@ public:
     Node* next;
     Node()
     {
-        data=0;
-        next=NULL;
+        this->data=0;
+        this->next=NULL;
     }
     Node(int x)
     {
