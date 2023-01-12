@@ -74,19 +74,21 @@ public:
             }
             temp=temp->next;
         }
+        Node* newNode=new Node(x);
+        newNode->prev=temp;
+        newNode->next=temp->next->next;
+        temp->next=newNode;
         if(temp==NULL)
         {
             cout<<"Node you entered not found:"<<endl;
             return;
         }
-        Node* newNode=new Node(x);
-        newNode->prev=temp;
-        temp->next=newNode;
+
     }
     void insertBeforespc(int x)
     {
         int element;
-        cout<<"before which node you want to insert?:";
+        cout<<"Before which node you want to insert?:";
         cin>>element;
         if(head==NULL)
         {
@@ -109,6 +111,7 @@ public:
         }
         Node* newNode=new Node(x);
         newNode->prev=temp;
+        newNode->next=temp->next->next;
         temp->next=newNode;
     }
     void deleteFromBeg()
