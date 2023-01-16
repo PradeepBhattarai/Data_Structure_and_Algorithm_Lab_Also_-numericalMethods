@@ -16,12 +16,12 @@ int precedenceof(char c)
 }
 string infixToPrefix(string infix)
 {
+    reverse(infix.begin(),infix.end());
     string result;
     stack<char> st;
-    reverse(infix.begin(),infix.end());
     for(int i=0;i<infix.length();i++)
     {
-        if((infix[i]>='a'&& infix[i]<='z')||(infix[i]>='0'&&infix[i]<='9'))
+        if((infix[i]>='A'&& infix[i]<='Z')||(infix[i]>='a'&& infix[i]<='z')||(infix[i]>='0'&&infix[i]<='9'))
         {
             result+=infix[i];
         }
@@ -40,7 +40,7 @@ string infixToPrefix(string infix)
         }
         else
         {
-            while((!st.empty())&&(precedenceof(infix[i])<=precedenceof(st.top())))
+            while(!st.empty() && precedenceof(infix[i])<precedenceof(st.top()))
             {
                 result+=st.top();
                 st.pop();
@@ -62,6 +62,6 @@ int main()
     string infix;
     cout<<"Enter infix expression:";
     cin>>infix;
-    cout<<infixToPrefix(infix);
+    cout<<infixToPrefix(infix)<<endl;
     return 0;
 }

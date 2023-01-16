@@ -5,7 +5,7 @@ using namespace std;
 
 float f(float x,float y)
 {
-    return x*x+2*x-y;
+    return (y*y-x*x)/(y*y+x*x);
 }
 int main()
 {
@@ -19,7 +19,7 @@ int main()
     float k1,k2,k3,k4,k,x,y;
     cout<<"\nxn\tyn\n";
     cout<<x0<<"\t"<<y0<<endl;
-    while(x0<=xn)
+    while(x0<xn)
     {
         k1=h*f(x0,y0);
         k2=h*f(x0+h/2,y0+k1/2);

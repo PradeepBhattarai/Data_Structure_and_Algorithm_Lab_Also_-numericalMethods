@@ -20,7 +20,7 @@ string InfixToPostfix(string infix)
     string result;
     for(int i=0;i<infix.length();i++)
     {
-        if((infix[i]>='a' && infix[i]<='z')||(infix[i]>='0' && infix[i]<='9'))
+        if((infix[i]>='A' && infix[i]<='Z')||(infix[i]>='a' && infix[i]<='z')||(infix[i]>='0' && infix[i]<='9'))
         {
             result+=infix[i];
         }

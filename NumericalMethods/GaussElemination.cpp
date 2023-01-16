@@ -19,7 +19,7 @@ int main()
     //Elimination
     for(int i=0;i<n;i++)
     {
-        if(a[i][i]==0.0)
+        if(a[i][i]<0.00005)
         {
             cout<<"Mathematical Error!"<<endl;
             return 0;
