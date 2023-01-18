@@ -68,7 +68,7 @@ public:
         Node* temp=head;
         while(temp->next!=NULL)
         {
-            if(temp->data=element)
+            if(temp->data==element)
             {
                 break;
             }
@@ -76,7 +76,8 @@ public:
         }
         Node* newNode=new Node(x);
         newNode->prev=temp;
-        newNode->next=temp->next->next;
+        temp->next->prev=newNode;
+        newNode->next=temp->next;
         temp->next=newNode;
         if(temp==NULL)
         {
@@ -95,10 +96,19 @@ public:
             cout<<"List is empty No specific node found:";
             return;
         }
+        Node* newNode=new Node(x);
         Node* temp=head;
-        while(temp->next->next!=NULL)
+        if(head->data==element)
         {
-            if(temp->data=element)
+            head->prev=newNode;
+            newNode->next=head;
+            newNode->prev=NULL;
+            head=newNode;
+            return;
+        }
+        while(temp->next!=NULL)
+        {
+            if(temp->data==element)
             {
                 break;
             }
@@ -109,10 +119,10 @@ public:
             cout<<"Node not found"<<endl;
             return;
         }
-        Node* newNode=new Node(x);
-        newNode->prev=temp;
-        newNode->next=temp->next->next;
-        temp->next=newNode;
+        newNode->prev=temp->prev;
+        (temp->prev)->next=newNode;
+        temp->prev=newNode;
+        newNode->next=temp;
     }
     void deleteFromBeg()
     {
@@ -134,12 +144,12 @@ public:
             return;
         }
         Node* temp=head;
-        while(temp->next->next=NULL)
+        while((temp->next)!=NULL)
         {
             temp=temp->next;
         }
-        Node* temp1=temp->next;
-        temp->next=NULL;
+        Node* temp1=temp;
+        temp->prev->next=NULL;
         delete temp1;
     }
     void deleteAfterSpc()
@@ -153,9 +163,9 @@ public:
             return;
         }
         Node* temp=head;
-        while(temp!=NULL)
+        while(temp->next!=NULL)
         {
-            if(temp->data=element)
+            if(temp->data==element)
             {
                 break;
             }
@@ -167,13 +177,13 @@ public:
             return;
         }
         Node* temp1=temp->next;
+        temp->next->next->prev=temp;
         temp->next=temp->next->next;
-        temp->next->prev=temp;
         delete temp1;
     }
     void deleteBeforeSpec()
     {
-        cout<<"Enter after which node you want to delete:";
+      cout<<"Enter before which node you want to delete:";
         int element;
         cin>>element;
         if(head==NULL)
@@ -182,9 +192,9 @@ public:
             return;
         }
         Node* temp=head;
-        while(temp!=NULL)
+        while(temp->next!=NULL)
         {
-            if(temp->next->data=element)
+            if(temp->data==element)
             {
                 break;
             }
@@ -195,8 +205,9 @@ public:
             cout<<"Node not found:"<<endl;
             return;
         }
-        Node* temp1=temp;
-        temp->prev->next=temp->next;
+        Node* temp1=temp->prev;
+        temp->prev->prev->next=temp->next;
+        temp->prev=temp->prev->prev;
         delete temp1;
     }
     void display()
