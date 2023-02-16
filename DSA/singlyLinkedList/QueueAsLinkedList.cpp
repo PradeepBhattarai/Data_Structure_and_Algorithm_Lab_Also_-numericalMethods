@@ -64,17 +64,17 @@ public:
         }
         cout<<endl;
     }
-    // ~Queue()
-    // {
-    //     Node* temp=front;
-    //     while(temp!=NULL)
-    //     {
-    //         Node* next=temp->next;
-    //         delete temp;
-    //         temp=next;
-    //     }
-    //     delete temp;
-    // }
+    ~Queue()
+    {
+        Node* temp=front;
+        while(temp!=NULL)
+        {
+            Node* next=temp->next;
+            delete temp;
+            temp=next;
+        }
+        delete temp;
+    }
 };
 int main()
 {
