@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -8,11 +9,11 @@ float f(float x, float y, float z)
 }
 float g(float x, float y, float z)
 {
-    return -(6 * x + z * z) / 10;
+    return -(6*x+z*z)/10;
 }
 int main()
 {
-    float x0, y, z, xn, h, l, k, k1, k2, k3, k4, l1, l2, l3, l4;
+    float x0, y, z, xn, h, l, k, k1, k2, l1, l2;
     cin >> x0 >> y >> z >> xn >> h;
     cout << "x\t"
          << "y\t"
@@ -21,14 +22,10 @@ int main()
     {
         k1 = h * f(x0, y, z);
         l1 = h * g(x0, y, z);
-        k2 = h * f(x0 + h / 2, y + k1 / 2, z + l1 / 2);
-        l2 = h * g(x0 + h / 2, y + k1 / 2, z + l1 / 2);
-        k3 = h * f(x0 + h / 2, y + k2 / 2, z + l2 / 2);
-        l3 = h * g(x0 + h / 2, y + k2 / 2, z + l2 / 2);
-        k4 = h * f(x0 + h, y + k3, z + l3);
-        l4 = h * g(x0 + h, y + k3, z + l3);
-        k = (k1 + 2 * k2 + 2 * k3 + k4) / 6;
-        l = (l1 + 2 * l2 + 2 * l3 + l4) / 6;
+        k2 = h * f(x0 + h , y + k1 , z + l1 );
+        l2 = h * g(x0 + h , y + k1 , z + l1 );
+        k = (k1 +k2) /2;
+        l = (l1 +l2) /2;
         cout << x0 << "\t" << y << "\t" << z << "\n";
         y = y + k;
         z = z + l;
