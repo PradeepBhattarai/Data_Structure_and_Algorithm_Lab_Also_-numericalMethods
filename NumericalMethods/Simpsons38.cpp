@@ -3,7 +3,7 @@
 using namespace std;
 float f(float x)
 {
-    return 1 + cos(x) * cos(x);
+    return sqrt(1 - x * x);
 }
 int main()
 {
