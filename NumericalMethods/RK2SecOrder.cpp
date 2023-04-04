@@ -5,11 +5,11 @@ using namespace std;
 
 float f(float x, float y, float z)
 {
-    return z;
+    return x*z+1;
 }
 float g(float x, float y, float z)
 {
-    return -(6*x+z*z)/10;
+    return -x*y;
 }
 int main()
 {

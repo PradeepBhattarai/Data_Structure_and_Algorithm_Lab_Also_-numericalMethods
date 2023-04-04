@@ -5,7 +5,7 @@ using namespace std;
 
 float f(float x,float y)
 {
-    return (y*y-x*x)/(y*y+x*x);
+    return (x * x + y * y) / 10;
 }
 int main()
 {

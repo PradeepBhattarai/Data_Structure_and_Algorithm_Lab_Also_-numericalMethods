@@ -1,9 +1,10 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 
 float f(float x,float y)
 {
-    return x*x+2*x-y;
+    return 2 * x + sin(x);
 }
 int main()
 {

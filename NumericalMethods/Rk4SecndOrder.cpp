@@ -8,7 +8,7 @@ float f(float x, float y, float z)
 }
 float g(float x, float y, float z)
 {
-    return -(6 * x + z * z) / 10;
+    return x*y*y-y*y;
 }
 int main()
 {
